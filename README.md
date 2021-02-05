@@ -1,5 +1,5 @@
 # DVDFabAutoRip
-DVDFabAutoRip is a VBScript to Watch for a Disc in the Optical Drive to be ready and Auto Rip them (Full ISO Clones) using DVDFab (DVDFab.cn, I reccomend using a Virtual Card number when buying) could be used for other software supporting command line control.
+DVDFabAutoRip is a VBScript to Watch for a Disc in the Optical Drive to be ready and Auto Rip them (Full ISO Clones) using DVDFab could be used for other software supporting command line control.
 
 
 The Idea is that you rip straight to the local folder hosting the SMB File Share for your Zappiti, Infuse Pro etc. Media Players library. You put your optical media in and it Just automaticly rips, no user input needed. When it is done the Optical media will eject automaticly. 
