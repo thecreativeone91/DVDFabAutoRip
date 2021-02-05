@@ -18,7 +18,7 @@ Sub RunTransfer
 			Wend
 			If objFSO.FolderExists("E:\VIDEOS\MOVIES") = True Then
 				objShell.Run """C:\Program Files\DVDFab 11\DVDFab64.exe"" /MODE ""BDCLONE"" /SRC ""D:\"" /DEST ""E:\VIDEOS\MOVIES"" /CLOSE"
-				WScript.Sleep 300000
+				WScript.Sleep 1200000
 			Else
 				MsgBox "Could Not find Destination", vbOKOnly, "Folder not found"
 			End If
