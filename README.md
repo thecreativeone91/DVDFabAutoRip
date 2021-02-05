@@ -1,10 +1,10 @@
 # DVDFabAutoRip
-DVDFabAutoRip is a VBScript to Watch for a Disc in the Optical Drive to be ready and Auto Rip them (Full ISO Clones) using DVDFab could be used for other software supporting command line control.
+DVDFabAutoRip is a VBScript to watch for a Disc in the Optical Drive to be ready and Auto Rip them (Full ISO Clones) using DVDFab. This script could be used for other software supporting command line control.
 
 
-The Idea is that you rip straight to the local folder hosting the SMB File Share for your Zappiti, Infuse Pro etc. Media Players library. You put your optical media in and it Just automaticly rips, no user input needed. When it is done the Optical media will eject automaticly. 
+The idea is that you rip your movies straight to the local folder hosting the SMB File Share for your Zappiti, Infuse Pro etc. Media Players library. You put your optical media in and it Just automaticly rips, no user input needed. When it is done the Optical media will eject automaticly. 
 
-Please Note in DVDFab you need to uncheck the following setting to prevent it from creating subfolders everytime you rip:
+Please Note: in DVDFab you need to uncheck the following setting to prevent it from creating subfolders everytime you rip:
 
 ![Subfolders](Subfolders.png)
 
