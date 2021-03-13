@@ -1,8 +1,7 @@
 # DVDFabAutoRip
 Note: I do not condone piracy, please use this only for backing up your own physical media you have bought. A lot of work goes into making a movie, make sure they get the support they need by buying your movies legally. 
 
-To Run as a service Copy DVDFabAutoRip.ini to C:\ServiceStart\ and run srvstart.exe install DVDFabAutoRip -C C:\ServiceStart\DVDFabAutoRip.ini after installing [srvstart](https://github.com/rozanski/srvstart). Note when running as a service you will not see the interface but you can monitor the status with DVDFab remote on iOS and android, I'm working on a way to see if I can get the local interface to show when logged in. 
-
+To Run as a service Copy DVDFabAutoRip.ini to C:\ServiceStart\ and run srvstart.exe install DVDFabAutoRip -C C:\ServiceStart\DVDFabAutoRip.ini after installing [srvstart](https://github.com/rozanski/srvstart). Be sure to set the logon to your administator account, and I'd reccomend using Automatic (delayed Start). Note when running as a service you will not see the interface but you can monitor the status with DVDFab remote on iOS and android, 
 DVDFabAutoRip is a VBScript to watch for a Disc in the Optical Drive to be ready and Auto Rip them (Full ISO Clones) using DVDFab. This script could be used for other software supporting command line control.
 
 
