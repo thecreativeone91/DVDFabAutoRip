@@ -3,6 +3,8 @@
 # Disclaimer
 Note: I do not condone piracy, please use this only for backing up your own physical media you have bought. A lot of work goes into making a movie, make sure they get the support they need by buying your movies legally. 
 
+# Powershell
+Documentation to be updated, powershell version [DVDFab.ps1](DVDFab.ps1) has been created, the VBScript is deperciated. 
 
 # Overview
 DVDFabAutoRip is a VBScript to watch for a Disc in the Optical Drive to be ready and Auto Rip them (Full ISO Clones) using DVDFab. This script could be used for other software supporting command line control.
