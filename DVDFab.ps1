@@ -1,4 +1,39 @@
 #DVDFab AutoCloning Script
+#Installer, must be running as administrator to Install
+ Param(
+#[Parameter(Mandatory=$false)]
+[Switch]$Install
+)
+if($Install){
+Write-Host 'Please Wait.. Installing DVDFabAutoRip Service'
+Write-Host 'Downloading Chocolatey Package Manager.'
+#Download and Install Choclatey Package Manager
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Write-Host 'Done.. Creating Service with NSSM'
+#Install Non-Sucking Service Manager from Choclatey
+choco install nssm
+#Copy our Script to a static location for Service
+$ScriptPath= 'C:\DVDFabAutoRip\DVDFab.ps1'
+#Make Folder (even if it's there)
+New-Item C:\DVDFabAutoRip -ItemType Directory -Force
+#Copy Current Script to folder
+Copy-Item -Path $PSScriptRoot\DVDFab.ps1 -Destination $ScriptPath -Force
+#Create Service with NSSM
+$nssm = 'C:\ProgramData\chocolatey\lib\NSSM\tools\nssm.exe'
+$ServiceName = 'DVDFabAutoRip'
+$ServicePath = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+$ServiceArguments = '-ExecutionPolicy Bypass -NoProfile -File "{0}"' -f $ScriptPath
+& $nssm install $ServiceName $ServicePath $ServiceArguments
+Start-Sleep -Seconds .5
+# check the status... should be stopped
+& $nssm status $ServiceName
+# start things up!
+& $nssm start $ServiceName
+# verify it's running
+& $nssm status $ServiceName
+Write-Host 'Service is now installed'
+Return}
+#Normal Script
 #loop
 While($true)
 {
