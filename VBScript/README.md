@@ -1,3 +1,7 @@
+# Depreciated 
+Unless you have a speific reason for using the VBScript, you should be using the [PowerShell Script](/). The VBScript will not be maintained going forward. 
+
+
 # DVDFabAutoRip
 
 # Disclaimer
