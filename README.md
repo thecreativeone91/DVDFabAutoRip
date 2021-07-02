@@ -21,7 +21,7 @@ To Run as a service Copy DVDFabAutoRip.ini to C:\ServiceStart\ and run ``srvstar
 # DVDFab Setting
 Please Note: in DVDFab you need to uncheck the following setting to prevent it from creating subfolders everytime you rip:
 
-![Subfolders](Subfolders.png)
+![Subfolders](/VBScript/Subfolders.png)
 
 # Startup Folder Method
 I put the script under C:\Scripts\DVDFab.vbs on my NAS Computer (a Mini ITX System with 21TB of Storage using a Perc Raid Card), and have a shortcut to it under the startup folder to auto start at login, I have since switched to running it as a service, Either method will work. 
