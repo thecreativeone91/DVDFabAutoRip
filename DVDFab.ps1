@@ -24,6 +24,7 @@ $ServiceName = 'DVDFabAutoRip'
 $ServicePath = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
 $ServiceArguments = '-ExecutionPolicy Bypass -NoProfile -File "{0}"' -f $ScriptPath
 & $nssm install $ServiceName $ServicePath $ServiceArguments
+&nssm set $ServiceName Description DVDFabAutoRip Service to watch for media in optical drive and launch DVDFab for Ripping
 Start-Sleep -Seconds .5
 # check the status... should be stopped
 & $nssm status $ServiceName
