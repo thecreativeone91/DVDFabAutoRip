@@ -1,5 +1,13 @@
-#DVDFab AutoCloning Script
-#Installer, must be running as administrator to Install
+###                                       DVDFab AutoCloning Script                               ###
+###                                           Update 7/14/2021                                    ###
+###                    Requires DVDFab and a UHD Friendly Drive to Clone Blu ray Discs            ###
+###                   ".\DVDFab.ps1 - Install" must be running as administrator to Install        ###
+###                     Be Sure to Set the DVDFab Variables for your enviroment                   ###
+### $DVDFab is the location of your DVDFab executable                                             ###
+### $Mode is the mode to run DVDFab in see https://www.dvdfab.cn/manual/introduction/command-line ###
+### $Dest is the Destination path for your copy/clone $DVD is your optical drive                  ###
+###
+###
  Param(
 #[Parameter(Mandatory=$false)]
 [Switch]$Install
@@ -39,14 +47,17 @@ Return}
 While($true)
 {
 #Check CDDrive for Optical Disc
+###            VARIABLES                       ###
+### BE Sure to Check these for your enviroment ###
+### These are required to work properly        ###
 $Media= (Get-WMIObject -Class Win32_CDROMDrive -Property *).MediaLoaded
 #Set DVDFab Location
 $DVDFab= "C:\Program Files\DVDFab\DVDFab 12\DVDFab64.exe"
 #Set DVDFab Mode
 #Double Quotes required, DVDFab Commandline needs quotes https://www.dvdfab.cn/manual/introduction/command-line
-$Mode="`"BDCLONE`""
+$Mode="`"BDFULLDISC`""
 #Set Destination Folder 
-$Dest="`"E:\Videos\Movies`""
+$Dest="`"E:\Videos\Movies\volume.iso`""
 #Set DVD Drive Letter
 $DVD= "`"D:\`""
 #Check If DVD is in Drive and start DVDFab Cloning, waiting for process to end
@@ -54,6 +65,8 @@ $DVD= "`"D:\`""
 If ($Media -eq $true) {
 #Print That Drive is Ripping, Lauch DVDFab and Wait for DVDFab to close 
 Write-Host 'Media is in Drive, Starting DVDFab Rip';
+## Close Staticly set, not a Variable as the process will not work automacitly if DVDFab is not ending it's process
+### It's also required to be able to run as a service, as we can no longer interact with applications running as a service
 Start-Process $DVDFab -Wait -ArgumentList ('/Mode',$Mode,'/SRC',$DVD,'/DEST',$Dest,'/CLOSE')
 Write-Host "Done Copying, Ejecting CD Tray if not already Ejected"
 #Ejecting requires administrative rights
