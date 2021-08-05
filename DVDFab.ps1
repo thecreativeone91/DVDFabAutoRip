@@ -56,10 +56,12 @@ $DVDFab= "C:\Program Files\DVDFab\DVDFab 12\DVDFab64.exe"
 #Set DVDFab Mode
 #Double Quotes required, DVDFab Commandline needs quotes https://www.dvdfab.cn/manual/introduction/command-line
 $Mode="`"BDFULLDISC`""
-#Set Destination Folder 
-$Dest="`"E:\Videos\Movies\volume.iso`""
 #Set DVD Drive Letter
 $DVD= "`"D:\`""
+#Get DVD Label Name for ISO File Name, Set Optical Drive Letter
+$DVDLabel= Get-Volume -DriveLetter D| % FileSystemLabel
+#Set Destination Folder 
+$Dest="`"E:\Videos\Movies\$DVDLabel.iso`""
 #Check If DVD is in Drive and start DVDFab Cloning, waiting for process to end
 
 If ($Media -eq $true) {
