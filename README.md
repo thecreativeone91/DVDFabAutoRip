@@ -36,10 +36,10 @@ Save your changes.
 Run PowerShell as an Administrator CD to the directory you saved the script. Type ".\DVDFab.ps1 -Install" DVDFabAutoRip will now be installed as a system service. 
 You may want to change the service logon account to a local administrator account rather than the System account if you run into any issues. 
 
-#DVDFab Remote
+# DVDFab Remote
 Use the DVDFab Remote on iOS and Android to monitor your progress. Hopefully, in the future DVDFab adds the ability to monitor and control another session from the full app for full control and the possiblity of fixing errors without manually running DVDFab. For now the remote apps works for most use cases. 
 
-![DVDFabRemote](DVDFab Remote.png.png)
+![DVDFabRemote](DVDFab Remote.png)
 
 
 
