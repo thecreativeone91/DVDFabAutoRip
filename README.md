@@ -36,6 +36,13 @@ Save your changes.
 Run PowerShell as an Administrator CD to the directory you saved the script. Type ".\DVDFab.ps1 -Install" DVDFabAutoRip will now be installed as a system service. 
 You may want to change the service logon account to a local administrator account rather than the System account if you run into any issues. 
 
+#DVDFab Remote
+Use the DVDFab Remote on iOS and Android to monitor your progress. Hopefully, in the future DVDFab adds the ability to monitor and control another session from the full app for full control and the possiblity of fixing errors without manually running DVDFab. For now the remote apps works for most use cases. 
+
+![DVDFabRemote](DVDFab Remote.png.png)
+
+
+
 # Known Script Issues
  
  LiveUpdate.exe - LiveUpdate is a program that DVDFab is uses to check for and prompt you to install updates to the program. Currently there is no way to turn off update checks in DVDFab. When DVDFab is lauched it will check this, and leave liveupdate.exe open with a window for you to install until you confirm to install or manually close. The /CLOSE paramater for DVDFab.exe commandline does not pass thru to this update utility. So if there is an update the process will not continue as the script will be waiting for this to close. The old VBScript got around this by waiting for the Optical drive to be in a ready state, however this had more problems as it was a guessing game with delays as the drive is not in use when DVDFab first runs and if it as to pull decryption information from DVDFab Servers. I'm currently working on a process to watch for and close this when detected. 
