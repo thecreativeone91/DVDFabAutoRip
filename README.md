@@ -3,6 +3,12 @@
 # Disclaimer
 Note: I do not condone piracy, please use this only for backing up your own physical media you have bought. A lot of work goes into making a movie, make sure they get the support they need by buying your movies legally. 
 
+# Why Use DVDFabAutoRip?
+DVDFabAutoRip is a Powershell script that can be ran as a service to watch for a disc in the optical drive and Auto Rip them (Full ISO Clones) using DVDFab. This script could be used for other software supporting command line control or modified for other file formats besides full ISO rips, as some media players do not support ISO files. 
+
+The idea is that you rip your movies straight to the local folder hosting the SMB File Share for your Zappiti, Infuse Pro etc. Media Players library. You put your optical media in and it Just automaticly rips, no user input needed. When it is done the optical media will eject automaticly.
+
+
 # PowerShell
 Documentation to be updated, powershell version [DVDFab.ps1](DVDFab.ps1) has been created, the VBScript is depreciated. The Script can be installed as a service by using the -Install Parameter when running the script. Please note when running as a service you will need to use the mobile DVDFab Remote app to monitor progress, this is due to the secure desktop no longer being supported on modern versions of windows, so you will not see the GUI. 
 
