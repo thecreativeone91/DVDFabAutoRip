@@ -55,7 +55,7 @@ $Media= (Get-WMIObject -Class Win32_CDROMDrive -Property *).MediaLoaded
 $DVDFab= "C:\Program Files\DVDFab\DVDFab 12\DVDFab64.exe"
 #Set DVDFab Mode
 #Double Quotes required, DVDFab Commandline needs quotes https://www.dvdfab.cn/manual/introduction/command-line
-$Mode="`"BDFULLDISC`""
+$Mode="`"CLONE`""
 #Set DVD Drive Letter
 $DVD= "`"D:\`""
 #Get DVD Label Name for ISO File Name, Set Optical Drive Letter
