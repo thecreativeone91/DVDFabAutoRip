@@ -43,7 +43,7 @@ Run PowerShell as an Administrator CD to the directory you saved the script. Typ
 You may want to change the service logon account to a local administrator account rather than the System account if you run into any issues. 
 
 # DVDFab Remote
-Use the DVDFab Remote on iOS and Android to monitor your progress. Hopefully, in the future DVDFab adds the ability to monitor and control another session from the full app for full control and the possiblity of fixing errors without manually running DVDFab. For now the remote apps works for most use cases. 
+Use the DVDFab Remote on iOS (or M1 Mac) and Android to monitor your progress. Hopefully, in the future DVDFab adds the ability to monitor and control another session from the full app for full control and the possiblity of fixing errors without manually running DVDFab. For now the remote apps works for most use cases. 
 
 ![DVDFabRemote](DVDFab%20Remote.png)
 
