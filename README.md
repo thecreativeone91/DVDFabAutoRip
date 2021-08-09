@@ -15,7 +15,7 @@ The idea is that you rip your movies straight to the local folder hosting the SM
 
 
 # PowerShell
-Documentation to be updated, powershell version [DVDFab.ps1](DVDFab.ps1) has been created, the VBScript is depreciated. The Script can be installed as a service by using the -Install Parameter when running the script. Please note when running as a service you will need to use the mobile DVDFab Remote app to monitor progress, this is due to the secure desktop no longer being supported on modern versions of windows, so you will not see the GUI. 
+powershell version [DVDFab.ps1](DVDFab.ps1) has been created, the VBScript is depreciated. The Script can be installed as a service by using the -Install Parameter when running the script. Please note when running as a service you will need to use the mobile DVDFab Remote app to monitor progress, this is due to the interactive services desktop (session 0) is no longer being supported on modern versions of windows, so you will not see the GUI. 
 
 # Installation
 Copy [DVDFab.ps1](DVDFab.ps1) to a location on your harddrive. 
