@@ -4,9 +4,9 @@
 Note: I do not condone piracy, please use this only for backing up your own physical media you have bought. A lot of work goes into making a movie, make sure they get the support they need by buying your movies legally. 
 
 # Versions
-- 2.1.1 is the current Stable release
 
-- 2.2 Beta is Not heavily tested and includes a fix for the liveupdate issue that has not been tested yet as no new updates have been released for DVDFab
+- 2.2 is the Stable release that includes a fix for the liveupdate issue and has been tested
+- 2.1.1 is the Old Stable release
 
 # Why Use DVDFabAutoRip?
 DVDFabAutoRip is a Powershell script that can be ran as a service to watch for a disc in the optical drive and Auto Rip them (Full ISO Clones) using DVDFab. This script could be used for other software supporting command line control or modified for other file formats besides full ISO rips, as some media players do not support ISO files. This has mainly been used to rip full uncompressed UHD Blu ray's as these have way better quality than streaming. 
@@ -56,7 +56,7 @@ Use the DVDFab Remote on iOS (or M1 Mac) and Android to monitor your progress. H
 
 # Known Script Issues
  
-Fix Possibly issued in 2.2 Beta. LiveUpdate.exe - LiveUpdate is a program that DVDFab is uses to check for and prompt you to install updates to the program. Currently there is no way to turn off update checks in DVDFab. When DVDFab is lauched it will check this, and leave liveupdate.exe open with a window for you to install until you confirm to install or manually close. The /CLOSE paramater for DVDFab.exe commandline does not pass thru to this update utility. So if there is an update the process will not continue as the script will be waiting for this to close. The old VBScript got around this by waiting for the Optical drive to be in a ready state, however this had more problems as it was a guessing game with delays as the drive is not in use when DVDFab first runs and if it as to pull decryption information from DVDFab Servers. I'm currently working on a process to watch for and close this when detected. 
+*Fixed in 2.2 Final - Fix Possibly issued in 2.2 Beta. LiveUpdate.exe - LiveUpdate is a program that DVDFab is uses to check for and prompt you to install updates to the program. Currently there is no way to turn off update checks in DVDFab. When DVDFab is lauched it will check this, and leave liveupdate.exe open with a window for you to install until you confirm to install or manually close. The /CLOSE paramater for DVDFab.exe commandline does not pass thru to this update utility. So if there is an update the process will not continue as the script will be waiting for this to close. The old VBScript got around this by waiting for the Optical drive to be in a ready state, however this had more problems as it was a guessing game with delays as the drive is not in use when DVDFab first runs and if it as to pull decryption information from DVDFab Servers. I'm currently working on a process to watch for and close this when detected.
  
  Errors, Prompts etc. - This one is not possible to fix and is just the nature of how DVDFab works. If a disc is not reading well you may or may not get a warning in DVDFab remote. If something seems off, just stop the script or DVDFabAuto Rip service in Services.msc and run it manually. 
 
