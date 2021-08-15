@@ -1,5 +1,5 @@
-###                                       DVDFab AutoCloning Script                               ###
-###                                           Update 7/14/2021                                    ###
+###                                       DVDFab AutoCloning Script v2.2 Final                    ###
+###                                           Updated 8/15/2021                                   ###
 ###                    Requires DVDFab and a UHD Friendly Drive to Clone Blu ray Discs            ###
 ###                   ".\DVDFab.ps1 - Install" must be running as administrator to Install        ###
 ###                     Be Sure to Set the DVDFab Variables for your enviroment                   ###
@@ -10,7 +10,8 @@
 ###
  Param(
 #[Parameter(Mandatory=$false)]
-[Switch]$Install
+[Switch]$Install,
+[Switch]$LiveUpdate
 )
 if($Install){
 Write-Host 'Please Wait.. Installing DVDFabAutoRip Service'
@@ -42,6 +43,16 @@ Start-Sleep -Seconds .5
 & $nssm status $ServiceName
 Write-Host 'Service is now installed'
 Return}
+if($LiveUpdate){
+#kill LiveUpdate.exe which will prevent process from looping if an update is found
+Start-Sleep -Seconds 45
+Write-Host "Ending Liveupdate.exe"
+Stop-Process -Name LiveUpdate
+#Delay incase we missed LiveUpdate the first try
+Start-Sleep -Seconds 60
+Write-Host "Ending Liveupdate.exe"
+Stop-Process -Name LiveUpdate
+Return}
 #Normal Script
 #loop
 While($true)
@@ -63,10 +74,11 @@ $DVDLabel= Get-Volume -DriveLetter D| % FileSystemLabel
 #Set Destination Folder 
 $Dest="`"E:\Videos\Movies\$DVDLabel.iso`""
 #Check If DVD is in Drive and start DVDFab Cloning, waiting for process to end
-
 If ($Media -eq $true) {
 #Print That Drive is Ripping, Lauch DVDFab and Wait for DVDFab to close 
 Write-Host 'Media is in Drive, Starting DVDFab Rip';
+## Launch Script with switch to end LiveUpdate, in it's own session
+Start-Process Powershell.exe -Argumentlist "-file $PSScriptRoot\DVDFab.ps1 -LiveUpdate"
 ## Close Staticly set, not a Variable as the process will not work automacitly if DVDFab is not ending it's process
 ### It's also required to be able to run as a service, as we can no longer interact with applications running as a service
 Start-Process $DVDFab -Wait -ArgumentList ('/Mode',$Mode,'/SRC',$DVD,'/DEST',$Dest,'/CLOSE')
