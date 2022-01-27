@@ -13,7 +13,7 @@ DVDFabAutoRip is a Powershell script that can be ran as a service to watch for a
 
 The idea is that you rip your movies straight to the local folder hosting the SMB File Share for your Zappiti, Infuse Pro etc. Media Players library. You put your optical media in and it Just automaticly rips, no user input needed. When it is done the optical media will eject automaticly.
 
-#Support 
+# Support 
 Support is limited but will be provided through our Zappiti discord server https://discord.gg/qgcSfFQzYW
 
 # PowerShell
