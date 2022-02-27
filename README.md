@@ -4,8 +4,8 @@
 Note: I do not condone piracy, please use this only for backing up your own physical media you have bought. A lot of work goes into making a movie, make sure they get the support they need by buying your movies legally. 
 
 # Versions Changelog
-- 2.3 is the current Stable release that includes a fix for script/service hang after first rip due to optical drive eject hanging. 
-- 2.2 is the an old Stable release that includes a fix for the liveupdate issue and has been tested
+- 2.3 is the current Stable release that includes a fix for script/service hang after first rip due to optical drive eject hanging. See Issue #6
+- 2.2 is the an old Stable release that includes a fix for the liveupdate issue and has been tested. See Issue #4
 - 2.1.1 is the Old Stable release
 
 # Why Use DVDFabAutoRip?
