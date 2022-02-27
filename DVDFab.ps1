@@ -1,5 +1,5 @@
-###                                       DVDFab AutoCloning Script v2.2 Final                    ###
-###                                           Updated 8/15/2021                                   ###
+###                                       DVDFab AutoCloning Script v2.3 Final                    ###
+###                                           Updated 2/27/2022                                   ###
 ###                    Requires DVDFab and a UHD Friendly Drive to Clone Blu ray Discs            ###
 ###                   ".\DVDFab.ps1 - Install" must be running as administrator to Install        ###
 ###                     Be Sure to Set the DVDFab Variables for your enviroment                   ###
@@ -52,7 +52,7 @@ Stop-Process -Name LiveUpdate
 Start-Sleep -Seconds 60
 Write-Host "Ending Liveupdate.exe"
 Stop-Process -Name LiveUpdate
-Return}
+Exit}
 #Normal Script
 #loop
 While($true)
@@ -84,7 +84,10 @@ Start-Process Powershell.exe -Argumentlist "-file $PSScriptRoot\DVDFab.ps1 -Live
 Start-Process $DVDFab -Wait -ArgumentList ('/Mode',$Mode,'/SRC',$DVD,'/DEST',$Dest,'/CLOSE')
 Write-Host "Done Copying, Ejecting CD Tray if not already Ejected"
 #Ejecting requires administrative rights
-(New-Object -com "WMPlayer.OCX.7").cdromcollection.item(0).eject()
+$sh = New-Object -ComObject "Shell.Application"
+$sh.Namespace(17).Items() | 
+Where-Object { $_.Type -eq "CD Drive" } | 
+foreach { $_.InvokeVerb("Eject") }
 
   }  Else {
 #Print that Drive has no media and wait 30 seconds before looping
