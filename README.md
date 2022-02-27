@@ -3,9 +3,9 @@
 # Disclaimer
 Note: I do not condone piracy, please use this only for backing up your own physical media you have bought. A lot of work goes into making a movie, make sure they get the support they need by buying your movies legally. 
 
-# Versions
-
-- 2.2 is the Stable release that includes a fix for the liveupdate issue and has been tested
+# Versions Changelog
+- 2.3 is the current Stable release that includes a fix for script/service hang after first rip due to optical drive eject hanging. 
+- 2.2 is the an old Stable release that includes a fix for the liveupdate issue and has been tested
 - 2.1.1 is the Old Stable release
 
 # Why Use DVDFabAutoRip?
@@ -57,6 +57,8 @@ Use the DVDFab Remote on iOS (or M1 Mac) and Android to monitor your progress. H
 
 
 # Known Script Issues
+
+*Fixed in 2.3 Final - Some systems may hand after the first rip with the scrip this is due to the windows media player eject command that was used. Work around is to restart the service after each rip.* 
  
 *Fixed in 2.2 Final - Fix Possibly issued in 2.2 Beta. LiveUpdate.exe - LiveUpdate is a program that DVDFab is uses to check for and prompt you to install updates to the program. Currently there is no way to turn off update checks in DVDFab. When DVDFab is lauched it will check this, and leave liveupdate.exe open with a window for you to install until you confirm to install or manually close. The /CLOSE paramater for DVDFab.exe commandline does not pass thru to this update utility. So if there is an update the process will not continue as the script will be waiting for this to close. The old VBScript got around this by waiting for the Optical drive to be in a ready state, however this had more problems as it was a guessing game with delays as the drive is not in use when DVDFab first runs and if it as to pull decryption information from DVDFab Servers. I'm currently working on a process to watch for and close this when detected.*
  
