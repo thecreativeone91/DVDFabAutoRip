@@ -1,6 +1,6 @@
 # DVDFabAutoRip
 
-#No Longer Maintained
+# No Longer Maintained
 This script is no longer maintained. You may keep using it however no changes will be made nor tested with newer versions of DVDFab. You may consider using the [jlesage/makemkv](https://github.com/jlesage/docker-makemkv) docker container as an alternative.
 
 # Disclaimer
